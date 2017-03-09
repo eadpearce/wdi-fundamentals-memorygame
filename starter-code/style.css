@@ -1,20 +1,81 @@
-/* This is a multi-line
-comment. Add your CSS code
-from Unit 1 - 5 below  */
+
 body {
-	background-color: white;
 	color: black;
 	font-family: Georgia, serif;
 	text-align: center;
+	font-family: 'Farsan', cursive;
+	font-size:18px;
+	line-height:1.2em;
+	z-index:1;
 }
-
-nav {
-	background-color: #808080;
+#sidebar {
+	text-align:justify;
+	background: #BAA2E8;
+  	color: darkblue;
 }
-
+.content {
+	background: #FFDF67;
+    background: -webkit-linear-gradient(top left, pink, #FFDF67, #5BE4B3); /* For Safari 5.1 to 6.0 */
+    background: -o-linear-gradient(top left, pink, #FFDF67, #5BE4B3); /* For Opera 11.1 to 12.0 */
+    background: -moz-linear-gradient(top left, pink, #FFDF67, #5BE4B3); /* For Firefox 3.6 to 15 */
+    background: linear-gradient(top left, pink, #FFDF67, #5BE4B3); /* Standard syntax */
+}
+.inner {
+    width:460px;
+    padding-bottom:10px;
+	height: 100%;
+	margin:0 auto;
+}
+button {
+	line-height:1.5em;
+	font-size:14px;
+	border-radius:5px;
+}
+.turncounter {
+	font-weight:800;
+	line-height:1.5em;
+	display:block;
+	float:left;
+	margin-left:50px;
+}
+.paircounter {
+	font-weight:800;
+	line-height:1.5em;
+	display:block;
+	float:left;
+	margin-left:50px;
+}
+#turns {
+	display:block;
+	line-height:1.5em;
+	float:left;
+	width:50px;
+	height:1em;
+}
+#win {
+	display:block;
+	line-height:1.5em;
+	float:left;
+	font-weight:800;
+	width:100px;
+	height:1em;
+}
+#pairs {
+	display:block;
+	line-height:1.5em;
+	float:left;
+	width:50px;
+	height:1em;
+}
 footer {
-	background-color: #808080;
+	bottom:0;
+	position:fixed;
+	width:100%;
+	line-height:1.5em;
+	background-color: #50b0aa;
+	color:white;
 }
+/*
 .clearfix:after {
     visibility: hidden;
     display: block;
@@ -23,38 +84,185 @@ footer {
     height: 0;
     font-size: 0;
 }
-
+*/
+p {
+	padding:10px 20px;
+}
 a {
 	background: #ffbf00;
 	color: white;
-	padding: 35px;
-	display: block; 
-	float: left; 
+	padding: 10px;
+	display: inline-block; 
 }
 
 a:hover {
-	color: #ee5f3c;
+	background-color:red;
 }
 h1 {
-	color: violet;
+	font-size:30px;
+	font-weight:800;
+	line-height:1.2em;
+	padding:20px 0px;
+	color:darkblue;
 }
 h2 {
-	color: pink;
+	font-size:24px;
+	font-weight:800;
+	padding:20px;
 }
-.board { 
-	height: 80%;
-	width: 50%; 
+#game-board { 
+	width: 100%; 
 	display: inline-block;
+	margin:0 auto;
 }
+img {
+    width:70px;
+   }
 .card { 
-	width: 150px;
-	height: 200px; 
+    width:70px;
+    height:105px;
+	border-radius: 9px;
+	margin:2px;
 	border: 1px solid #000;
-	border-radius: 10px;
-	background: yellow;
-	margin: 8%;
+	background-image:url('images/card-back.png');
+	background-size: cover;
 	float: left;
+	transition:0.2s ease;
+	box-shadow: 2px 2px 1px #505050;
+}
+.card:hover {
+  	background-color: gray;
+  	background-blend-mode: multiply;
+	transition:0.2s ease;
 }
 .name {
 	color: pink;
+}
+
+/* for desktop - put sidebar back to the side */
+@media all and (min-width: 800px) and (min-height:600px) {
+	#sidebar {
+		margin-left:0;
+		margin-top:0;
+		height:100%;
+		position:absolute;
+	  	width: 25%;
+	}
+	.content {
+		width:75%;
+		height:100%;
+		right:0;
+		position:fixed;
+	}
+}
+/* make fonts bigger on desktops larger than 1024x700 */
+@media all and (min-width: 1024px) and (min-height:700px) {
+	body {
+		font-size:24px;
+	}
+	h1 {
+		font-size: 40px;
+	}
+	h2 {
+		font-size:35px;
+	}
+}
+/* for very large screens */
+@media all and (min-width: 1024px) and (min-height:810px) {
+	body {
+		font-size:24px;
+	}
+	h1 {
+		font-size: 40px;
+	}
+	h2 {
+		font-size:35px;
+	}
+	.card {
+		width: 100px;
+		height: 150px; 
+	}
+	img {
+	    width:100px;
+	    }
+    .content {
+    	width:100%;
+    	position:relative;
+    }
+	.inner {
+		width:636px;
+    	padding-bottom:20px;
+	}	
+	#sidebar {
+		margin-left:0;
+		margin-top:0;
+		height:100%;
+		position:absolute;
+	  	width: 25%;
+	}
+	.content {
+		width:75%;
+		height:100%;
+		right:0;
+		position:fixed;
+	}
+}
+/* for phones */
+@media all and (max-width: 400px) {
+    .card {
+    	width:45px;
+    	height:67px;
+		border-radius: 5px;
+    }
+    img {
+    	width:45px;
+    }
+    .content {
+    	width:100%;
+    	position:relative;
+    }
+    .inner {
+    	width:306px;
+    	padding-bottom:20px;
+    }
+    #sidebar {
+    	clear:both;
+    	width:100%;
+    	padding-bottom:30px;
+    	position:relative;
+    }
+}
+/* tablet */
+@media all and (min-height:1015px) and (max-width:1300px){
+	.card {
+		width: 100px;
+		height: 150px; 
+	}
+	img {
+	    width:100px;
+	    }
+    .content {
+    	width:100%;
+    	position:relative;
+    }
+	.inner {
+		width:636px;
+    	padding-bottom:20px;
+	}
+	#sidebar {
+    	clear:both;
+    	width:100%;
+    	height:100%;
+    	padding-bottom:30px;
+    	position:fixed;
+	}
+	h1 {
+		font-size:40px;
+	}
+	h2 {
+		font-size:30px;
+	}
+	body {
+		font-size:24px;
+	}
 }
